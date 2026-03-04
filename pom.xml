@@ -12,7 +12,7 @@
 
     <name>TicTacToe</name>
 
-    <!-- ✅ Java 21 Configuration -->
+    <!-- Java 21 -->
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -24,18 +24,22 @@
 
         <plugins>
 
-            <!-- Java Compiler Plugin -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
             </plugin>
 
-            <!-- WAR Plugin (Java 21 Compatible) -->
+            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
+                <configuration>
+                    <!-- Important for static project -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
             </plugin>
 
         </plugins>
